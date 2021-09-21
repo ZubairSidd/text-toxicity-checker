@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;600;800;900&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin-top: 10px;
+}
+body {
+  /* background-color: #333; */
+  text-align: center;
+  background-color: #333;
+  color: white;
+  font-size: 1.5rem;
+}
+body,
+#checkButton,
+#startButton,
+textarea {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.mainSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 10px - 60.83px);
+}
+.modelSection,
+.predictionLoading,
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inputText {
+  resize: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  /* font-size: 1.2rem; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#inputText,
+.output {
+  margin: 1rem 0;
+}
+
+#checkButton {
+  margin: auto;
+  margin: 1rem;
+}
+
+#startButton,
+#checkButton {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  padding: 0.25em 1em;
+  border-radius: 10px;
+  border: none;
+}
+#startButton,
+#checkButton {
+  box-shadow: rgba(136, 165, 191, 0.24) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.4) -6px -2px 16px 0px;
+  transition: 300ms;
+}
+#startButton:hover,
+#checkButton:hover {
+  cursor: pointer;
+  /* font-size: 1.8rem; */
+  transform: translateY(-5px);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.sk-cube-grid {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: white;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+
+  position: relative;
+  margin: auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+.hide {
+  display: none;
+}
+.show {
+  display: flex;
+}
+
+.spinner,
+.predictionText,
+.sk-cube-grid,
+.loadingText {
+  margin: 0.75rem auto;
+}
+
+@media (max-width: 570px) {
+  #inputText {
+    width: 100%;
+  }
+}
+@media (max-width: 535px) {
+  .mainSection {
+    height: calc(100vh - 10px - 121.67px);
+  }
+}
+@media (max-width: 320px) {
+  .mainSection {
+    height: calc(100vh - 10px - 182.5px);
+  }
+}
